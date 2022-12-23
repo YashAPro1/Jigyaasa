@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block body%}
+{% load static%}
+<div id="idfullbg" class="fullbg">
+    <img src="{% static 'home/logo.png'%}" style="height: 5em;width:5em;">
+    <p id="iddesc1" class="desc1" style="font-weight: 1em;">"The important thing is not to stop questioning. Curiosity
+        has its own reason for existing"</p>
+
+    <div class="guide_card">
+        <p class="guide_name">Our Guide</p>
+        <p class="guide_name_media">Guide: Jyoti Wadmare</p>
+        <img src="{% static 'home/Jyotiwadmare.jpg' %}" class="guide_img">
+        <!-- <p class="guide_desc">Hello sound</p> -->
+        <div class="guide_desc">
+            <div class="guide_name_name">
+                <p>Jyoti Wadmare</p>
+            </div>
+            <hr style="background-color: black; height: 0.1rem; width: 13rem; margin: 0.5rem auto;">
+            <div class="guide_desc_desc">
+                <p>Assistant Professor in Computer Engineering Department.</p>
+            </div>
+            <hr style="background-color: black; height: 0.05rem; width: 4rem; margin: 1rem auto;">
+            <a href="https://kjsieit.somaiya.edu.in/en/view-member/220080?type=faculty" target="_blank"
+                class="guide_readmore">Read more</a>
+        </div>
+        <a href="https://kjsieit.somaiya.edu.in/en/view-member/220080?type=faculty" target="_blank"
+            class="guide_desc_media">Assistant Professor in Computer Dept.</a>
+    </div>
+    <p id="iddesc1" class="desc1">Hello, we are B.Tech Computer Science students currently in Second Year, trying our
+        best to provide you with the most user friendly doubt solver website!!</p>
+    <div id="iddev_card" class="all_cards">
+        <div class="dev_card">
+            <p id="iddev_name" class="dev_name">Yash Chauhan</p>
+            <img src="{% static 'home/yash.jpg'%}" class="dev_img">
+            <p class="dev_desc">chauhan.y@somaiya.edu</p>
+        </div>
+        <div class="dev_card">
+            <p class="dev_name">Yashkumar Dubey</p>
+            <img src="{% static 'home/yashkumar.jpg'%}" class="dev_img">
+            <p class="dev_desc">yashkumar.d@somaiya.edu</p>
+        </div>
+        <div class="dev_card">
+            <p class="dev_name">Hitanshu Gandhi</p>
+            <img src="{% static 'home/hitanshu.jpg'%}" class="dev_img">
+            <p class="dev_desc">hitanshu.gandhi@somaiya.edu</p>
+        </div>
+        <div class="dev_card">
+            <p class="dev_name">Kushal Harsora</p>
+            <img src="{% static 'home/kushal1.jpeg' %}" class="dev_img">
+            <p class="dev_desc">kushal.h@somaiya.edu</p>
+        </div>
+    </div>
+</div>
+<div class="theme-mode">
+    <a onclick="uptheme_aboutus()">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+    </a>
+</div>
+<!-- Modal -->
+<!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Post Question</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="outer">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput" class="form-label"><strong>Name</strong></label>
+                        <input type="text" class="form-control" id="exampleFormControlInput" placeholder="Your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput" class="form-label"><strong>Type</strong></label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>General</option>
+                            <option value="1">Technical</option>
+                            <option value="2">Ask Expert</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label"><strong>Question</strong></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            placeholder="Write you question..." rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Post</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- <div id="idbuttno" class="buttno">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        +
+    </button>
+</div> -->
+<!-- <footer>
+    <p>Guided by: Jyoti Wadmare</p>
+    <p>Developed by: Yashkumare Dubey, Yash Chauhan, Hitanshu Gandhi, Kushal harsora</p>
+</footer> -->
+{% block scripts %}
+<script type="text/javascript" src="{% static 'home/vanilla-tilt.js' %}"></script>
+<!-- Vanilla JS -->
+
+
+<!-- Normal JS -->
+<script type="text/javascript" src="{% static 'home/aboutus.js'%}"></script>
+
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/e499e1a3c2.js" crossorigin="anonymous"></script>
+
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+{% endblock %}
+
+{% endblock body%}

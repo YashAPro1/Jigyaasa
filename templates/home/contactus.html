@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block body%}
+{% load static %}
+<div id="idfullbg" class="fullbg" style="height:100vh;margin-top: 0%;">
+  <!-- thememode -->
+  <div class="theme-mode">
+    <a onclick="changetheme()">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+    </a>
+  </div>
+  <!-- end thememode -->
+  <div class="contactUs">
+    <h2>Contact Us</h2>
+    <!-- <div class="information">
+          <p>hello</p>
+      </div> -->
+    <div class="Form">
+      <form onsubmit="hello(); reset(); return false;">
+        <div class="nameContact">
+          <input type="text" id="namecontact" required>
+          <span>Name</span>
+        </div>
+        <div class="emailContact">
+          <input type="text" id="emailcontact" required>
+          <span>Email</span>
+        </div>
+        <div class="msgContact">
+          <textarea id="msgcontact" required></textarea>
+          <span>type your message...</span>
+        </div>
+        <div class="submitForm">
+          <button type="submit">submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% block scripts %}
+<!-- Vanilla JS -->
+<script type="text/javascript" src="{% static 'home/vanilla-tilt.js' %}"></script>
+
+
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/e499e1a3c2.js" crossorigin="anonymous"></script>
+
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="{% static 'home/home.js' %}"></script>
+
+
+
+{% endblock %}
+
+
+{% endblock body%}

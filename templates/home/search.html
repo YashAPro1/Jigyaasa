@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+{% load static %}
+<div class="fullbg">
+
+    <h2>All search results are : </h2>
+    {% if allposts|length < 1 %} <p>No search results</p>
+        Your search query : <b>{{query}}</b> did not match any documents. <br>
+        Suggestions:
+        <ul>
+            <li>Make sure that all keywords are correct.</li>
+            <li>Try more general keywords.</li>
+            <li> Try fewer keywords.</li>
+
+        </ul>
+
+
+        {% endif %}
+        {% for post in allposts %}
+        <details class="show_answer">
+            <summary class="question_card_summary">
+                <div class="ycard">
+                    <div class="firstblock">
+                        <img src="{% static 'home/user_img.png' %}" class="card_user">
+                        <p class="card_name">Post by {{post.name}}</p>
+                        <p class="ques_type">{{post.title}}</p>
+                    </div>
+
+                    <pre class="question">{{post.question}}
+                            <!--| truncatechars:500}} if necessary tab hum dalenge-->
+                        </pre>
+                    <form action="/comment" method="POST">
+                        <div class="div_ans">
+                            <input class="input_answer" type="text" name="comment" placeholder="Answer here...">
+                            <!-- <a href="#" role="button" type=" submit" class="post_answer">
+                            <i class="fa-sharp fa-solid fa-paper-plane"></i>
+                        </a> -->
+                            <input type="hidden" name="postSno" value="{{post.sno}}">
+                            {% csrf_token %}
+                            <button type="submit" class="post_answer"><i
+                                    class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </summary>
+            <ul>
+                {% for comment in comments %}
+                <li>
+                    <div class="ans_ycard">
+                        <div class="ans_firstblock">
+                            <img src="{% static 'home/user_img.png' %}" class="ans_card_user">
+                            <p class="ans_card_name"><b>{{comment.user}}</b> </p>
+                            <!-- at {{comment.timestamp} will add above if problem resolved -->
+                        </div>
+                        <pre class="answer">{{comment.comment2}}
+                            </pre>
+                    </div>
+                </li>
+                {% endfor%}
+                <!-- <li>
+                        <div class="ans_ycard">
+                            <div class="ans_firstblock">
+                                <img src="{% static 'home/user_img.png' %}" class="ans_card_user">
+                                <p class="ans_card_name">name</p>
+                            </div>
+                            <p class="answer">THIS IS THE ANSWER!! Hello, I have exercise where I should make the same text page
+                                using CSS.
+                                Unfortunately, after a lot of attempts and googling its still not working.
+                                Someone told me to use display: flex, but in this exercise I should be using only block,inline
+                                or inline-block.Unfortunately, after a lot of attempts and googling its still not
+                                working.Unfortunately, after a lot of attempts and googling its still not working.
+                            </p>
+                        </div>
+                    </li> -->
+            </ul>
+        </details>
+
+        {% endfor %}
+</div>
+</div>
+{% endblock %}
